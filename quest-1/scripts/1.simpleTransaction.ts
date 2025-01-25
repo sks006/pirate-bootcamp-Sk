@@ -16,14 +16,37 @@ import {
   VersionedTransaction,
 } from "@solana/web3.js";
 
+
+/*
+# what is Keypair in SOL?
+=> keypair is like a boyfriend ,girlfirend  signing relation where  boy=public key/girl=private key
+ and the connect with phone with solana network.
+# LAMPORTS_PER_SOL
+=>it is  just convertion way between sol and smallest unit  1 SOL = 1 billion lamports.
+1 USD = 100 cents
+1 BTC = 100 million satoshi
+1 SOL = 1 billion lamports.
+
+# what is SystemProgram?
+=>fundamental operations, such as transferring SOL or creating accounts.
+
+#what is TransactionMassage?
+=> create the message for a transaction in the newer Solana transaction format (v0).
+#What is versionedTransaction?
+=>solana listing capped at 32 addresses per transaction  with the help of Address Lookup Tables 
+raise that limit to 64 addresses per transaction To utilize an Address 
+Lookup Table inside a transaction, developers must use VersionedTransactions
+
+*/
+
+
 (async () => {
-  //////////////////////////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////
+ 
 
   console.log("Payer address:", payer.publicKey.toBase58());
 
-  //////////////////////////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////
+ 
+ 
 
   // get the current balance of the `payer` account on chain
   const currentBalance = await connection.getBalance(payer.publicKey);
